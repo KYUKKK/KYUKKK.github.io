@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 웹페이지</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS 파일 연결 -->
+</head>
+<body>
+    <header>
+        <h1>나의 홈페이지</h1>
+        <nav>
+            <ul>
+                <li><button onclick="playDogBark()">버튼 1</button></li>
+                <li><button onclick="playDogBark()">버튼 2</button></li>
+                <li><button onclick="playDogBark()">버튼 3</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>소개</h2>
+            <p>여기에 본인에 대한 소개글을 적어보세요.</p>
+        </section>
+    </main>
+
+    <footer>
+        <button onclick="playDogBark()">하단 버튼</button>
+        <p>&copy; 2024 나의 홈페이지. 모든 권리 보유.</p>
+    </footer>
+
+    <!-- 개 짖는 소리 오디오 -->
+    <audio id="dogBark" src="https://www.soundjay.com/button/sounds/dog-bark-01.mp3"></audio>
+
+    <script>
+        function playDogBark() {
+            const audio = document.getElementById('dogBark');
+            audio.currentTime = 0; // 소리가 계속 반복되지 않도록 설정
+            audio.play();
+        }
+    </script>
+</body>
+</html>
