@@ -31,13 +31,15 @@
     </footer>
 
     <!-- 개 짖는 소리 오디오 -->
-    <audio id="dogBark" src="https://www.soundjay.com/button/sounds/dog-bark-01.mp3"></audio>
+    <audio id="dogBark" src="https://www.soundjay.com/button/sounds/dog-bark-01.mp3" preload="auto"></audio>
 
     <script>
         function playDogBark() {
             const audio = document.getElementById('dogBark');
-            audio.currentTime = 0; // 소리가 계속 반복되지 않도록 설정
-            audio.play();
+            audio.currentTime = 0; // 소리가 반복되지 않도록 설정
+            audio.play().catch(error => {
+                console.log("소리를 재생할 수 없습니다:", error);
+            });
         }
     </script>
 </body>
