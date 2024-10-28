@@ -30,16 +30,20 @@
         <p>&copy; 2024 나의 홈페이지. 모든 권리 보유.</p>
     </footer>
 
-    <!-- 개 짖는 소리 오디오 -->
-    <audio id="dogBark" src="https://www.soundjay.com/button/sounds/dog-bark-01.mp3" preload="auto"></audio>
+    <!-- 개 짖는 소리 오디오, 파일 이름을 본인이 가진 파일로 변경 -->
+    <audio id="dogBark" src="dog-bark.mp3" preload="auto"></audio>
 
     <script>
         function playDogBark() {
             const audio = document.getElementById('dogBark');
             audio.currentTime = 0; // 소리가 반복되지 않도록 설정
-            audio.play().catch(error => {
-                console.log("소리를 재생할 수 없습니다:", error);
-            });
+            audio.play()
+                .then(() => {
+                    console.log("소리 재생 중...");
+                })
+                .catch((error) => {
+                    console.error("소리를 재생할 수 없습니다:", error);
+                });
         }
     </script>
 </body>
